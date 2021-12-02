@@ -7,7 +7,7 @@ ITTI. EXPERT TRAINING EN AUTOMATIZACIÓN DE PROCESOS BIM: OFFICIAL DE AUTODESK. 
 **Enunciado**: Trabajando de forma colaborativa entre los alumnos del Máster, se pasarán todos los Nodos de Dynamo posibles a Python para poner en práctica lo contado en clase.
 
 - Este proceso implicará investigación y su objetivo es formativo.            
-- Se trabajará con nodos nativos de Dynamo y con Paquetes descargados como: Clockwork, ArchiLab, Rhythm, Data Shapes,...etc
+- Se trabajará con nodos nativos de Dynamo y con Paquetes descargados como: Clockwork, ArchiLab, Rhythm, ...etc
 - El proceso tiene que ser gradual por parte del alumno: comenzando por los nodos más sencillos a los nodos más complejos.            
 - Si el nodo ya ha sido pasado a Python, se evitará duplicar salvo que el nuevo .py aporte alguna optimización.
 - En los .py debe definirse una función para completar el objetivo.
