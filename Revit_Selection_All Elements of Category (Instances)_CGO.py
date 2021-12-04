@@ -3,7 +3,7 @@
 #BIBLIOTECAS
 import clr 
 clr.AddReference('RevitAPI') 
-from Autodesk.Revit.DB import FilteredElementCollector, ElementLevelFilter
+from Autodesk.Revit.DB import FilteredElementCollector
 clr.AddReference('RevitServices')
 from RevitServices.Persistence import DocumentManager
 doc = DocumentManager.Instance.CurrentDBDocument 
