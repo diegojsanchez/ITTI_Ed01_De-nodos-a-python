@@ -48,6 +48,6 @@ def todos_elementos_de_categoria_2(x, link):
 
 #ENTRADAS
 categoria = IN[0] #String(BuiltInCategory), BuiltInCategory o categoría del selector de categorias de Dynamo.
-link = UnwrapElement(IN[1]) #RevitLinkInstance. Si se actua contra el documento actual dejar el input vacio. 
+link = IN[1] #RevitLinkInstance. Si se actua contra el documento actual dejar el input vacio. 
 #SALIDA
 OUT = todos_elementos_de_categoria_2(categoria, link)
