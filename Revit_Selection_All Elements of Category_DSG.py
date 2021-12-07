@@ -9,12 +9,12 @@ from RevitServices.Persistence import DocumentManager
 doc = DocumentManager.Instance.CurrentDBDocument 
 
 #FUNCIONES
-def todos_elementos_por_categoria(c):
+def todos_tipos_por_categoria(c):
 	'''Uso: Colecta todos los elementos por categoría.'''
-	elementos = FilteredElementCollector(doc).OfCategory(c).ToElements()
+	elementos = FilteredElementCollector(doc).OfCategory(c).WhereElementIsElementType().ToElements()
 	return elementos
 
 #ENTRADAS
 categoria = UnwrapElement(IN[0]) #Para los elementos que vienen de Dynamo
 #SALIDA
-OUT = todos_elementos_por_categoria(categoria)
+OUT = todos_tipos_por_categoria(categoria)
