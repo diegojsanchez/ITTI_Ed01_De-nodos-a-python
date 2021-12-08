@@ -26,8 +26,7 @@ def todos_elementos_de_model_category(x):
 	bics = System.Enum.GetValues(BuiltInCategory)
 	bicn = map(lambda a: str(a), bics)
 	catBic = None
-	
-	# 
+	 
 	catString = x.GetType().ToString()
 	if catString == "System.String":
 		for n,c in zip(bicn,bics):
