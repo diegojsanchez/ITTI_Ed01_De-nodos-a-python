@@ -3,19 +3,19 @@
 #BIBLIOTECAS
 import clr 
 clr.AddReference('RevitAPI') 
-from Autodesk.Revit.DB import FilteredElementCollector, ElementLevelFilter
+from Autodesk.Revit.DB import FilteredElementCollector, RevitLinkInstance
 clr.AddReference('RevitServices')
 from RevitServices.Persistence import DocumentManager
 doc = DocumentManager.Instance.CurrentDBDocument 
 
 #FUNCIONES
-def todos_elementos_por_nivel(n):
-	'''Uso: Colecta todos los elementos por nivel.'''
-	filtro = ElementLevelFilter(n.Id)
-	elementos = FilteredElementCollector(doc).WherePasses(filtro).WhereElementIsNotElementType().ToElements()
-	return elementos
+def listado_vinculos_documentos_nombres_rutas():
+	'''Uso: Obtener el listado completo de vinculos, sus documentos, sus nombres y sus rutas.\nEntrada: Sin argumentos.\nSalida: Lista con sublistas:instancias, documentos, nombres y rutas.'''
+	vinculos = FilteredElementCollector(doc).OfClass(RevitLinkInstance).ToElements()
+	documentos = [x.GetLinkDocument() for x in vinculos]
+	nombres = [x.Name for x in vinculos]	
+	rutas = [d.PathName for d in documentos]
+	return {"Link Doc": documentos, "Link Nombres": nombres, "Link Instancias": vinculos, "Link Ruta": rutas}
 
-#ENTRADAS
-nivel = UnwrapElement(IN[0]) #Para los elementos que vienen de Dynamo
 #SALIDA
-OUT = todos_elementos_por_nivel(nivel)
+OUT = listado_vinculos_documentos_nombres_rutas()
